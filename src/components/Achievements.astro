@@ -1,0 +1,93 @@
+---
+import rashtrapatiBhavan from '../assets/achievements/rashtrapati-bhavan.jpg';
+import sih2024 from '../assets/achievements/sih-2024.jpg';
+import innerve from '../assets/achievements/innerve.jpg';
+import hackKarnataka from '../assets/achievements/hackathon-wins.jpg';
+import shecodes from '../assets/achievements/shecodes.jpg';
+// import hackRefine from '../assets/achievements/hack-refine.jpg';
+
+const technicalAchievements = [
+  {
+    title: 'Rashtrapati Bhavan Invite',
+    description: 'Invited by the President of India on the 76th Independence Day. Recognized for outstanding contribution at a national level.',
+    image: rashtrapatiBhavan,
+  },
+  {
+    title: 'SIH 2024 Winners',
+    description: 'Won Smart India Hackathon 2024, building a SCADA system for GAIL. Competed against 80,000+ teams nationwide.',
+    image: sih2024,
+  },
+  {
+    title: 'Innerve 9.0 Winners',
+    description: '1st place at Innerve 9.0, Army Institute of Technology. Outperformed 1,250+ teams.',
+    image: innerve,
+  },
+  {
+    title: 'SheCodes 2024 — Blockchain Track',
+    description: 'Built a decentralised carbon credits marketplace. Won 1st place in the blockchain track among 70 teams.',
+    image: shecodes,
+  },
+  {
+    title: 'Hack Karnataka Winners',
+    description: 'Won Hack Karnataka at KLE Technological University with team Luminosity. Organized by Google Developer Group Hubli.',
+    image: hackKarnataka,
+  },
+  // {
+  //   title: 'Hack Refine Winners',
+  //   description: 'TODO: Add description.',
+  //   image: hackRefine,
+  // },
+];
+
+// const literaryAchievements = [
+//   {
+//     title: 'TODO',
+//     description: 'TODO',
+//     image: null,
+//   },
+// ];
+---
+
+<section id="achievements" class="py-20 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto fade-in">
+  <h2 class="text-2xl sm:text-3xl font-bold mb-10">Achievements</h2>
+
+  <!-- Technical -->
+  <h3 class="text-lg font-semibold text-text-muted mb-6">Technical</h3>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+    {technicalAchievements.map((item) => (
+      <div class="rounded-xl bg-bg-card border border-border overflow-hidden hover:border-border-hover transition-colors">
+        {item.image ? (
+          <img src={item.image.src} alt={item.title} class="w-full h-40 object-cover" loading="lazy" />
+        ) : (
+          <div class="w-full h-40 bg-bg-card-hover flex items-center justify-center text-text-dim text-sm">
+            Photo placeholder
+          </div>
+        )}
+        <div class="p-4">
+          <h4 class="font-semibold text-sm mb-1">{item.title}</h4>
+          <p class="text-xs text-text-muted leading-relaxed">{item.description}</p>
+        </div>
+      </div>
+    ))}
+  </div>
+
+  {/* Literary — uncomment when ready */}
+  {/* <h3 class="text-lg font-semibold text-text-muted mb-6 mt-12">Literary</h3>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+    {literaryAchievements.map((item) => (
+      <div class="rounded-xl bg-bg-card border border-border overflow-hidden hover:border-border-hover transition-colors">
+        {item.image ? (
+          <img src={item.image.src} alt={item.title} class="w-full h-40 object-cover" loading="lazy" />
+        ) : (
+          <div class="w-full h-40 bg-bg-card-hover flex items-center justify-center text-text-dim text-sm">
+            Photo placeholder
+          </div>
+        )}
+        <div class="p-4">
+          <h4 class="font-semibold text-sm mb-1">{item.title}</h4>
+          <p class="text-xs text-text-muted leading-relaxed">{item.description}</p>
+        </div>
+      </div>
+    ))}
+  </div> */}
+</section>

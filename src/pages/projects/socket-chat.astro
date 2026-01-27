@@ -1,0 +1,21 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+import ProjectPage from '../../components/ProjectPage.astro';
+---
+
+<Layout title="Socket Chat — Vivek Agarwal">
+  <Navbar />
+  <ProjectPage
+    title="Socket Chat"
+    tagline="Real-time chat application with personal and channel-based messaging"
+    problem="Building reliable real-time communication with both private and group messaging requires careful handling of WebSocket connections and state management."
+    solution="A full-featured chat application supporting personal 1-on-1 conversations and channel-based group chats with real-time message delivery."
+    technical="React.js frontend with Recoil state management. Node.js backend with Socket.io for WebSocket-based real-time communication. MongoDB for message persistence and user data. JWT-based authentication. Deployed on Vercel."
+    tech={['React.js', 'Node.js', 'Socket.io', 'MongoDB', 'Recoil']}
+    github="https://github.com/agarwalvivek29/socket-chat"
+    deployment="https://socket-chat-alpha.vercel.app"
+  />
+  <Footer />
+</Layout>

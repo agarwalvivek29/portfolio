@@ -1,0 +1,20 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+import ProjectPage from '../../components/ProjectPage.astro';
+---
+
+<Layout title="Memory Insight — Vivek Agarwal">
+  <Navbar />
+  <ProjectPage
+    title="Memory Insight"
+    tagline="Forensic memory analysis platform"
+    problem="Memory forensics traditionally requires complex CLI tools like Volatility, making it inaccessible to many analysts and time-consuming for routine analysis."
+    solution="A web-based platform that simplifies forensic memory analysis with a user-friendly interface. Supports asynchronous memory capture and analysis with SSH-based remote server access."
+    technical="Microservices architecture with Next.js frontend and FastAPI backend. Volatility3 integration for memory analysis. RabbitMQ for async job processing. AWS S3 for memory dump storage. PostgreSQL for metadata. AVML for memory capture. Deployed on AWS EC2."
+    tech={['Next.js', 'FastAPI', 'Python', 'AWS S3', 'Volatility3', 'PostgreSQL', 'RabbitMQ', 'AVML']}
+    github="https://github.com/agarwalvivek29/memory-insight"
+  />
+  <Footer />
+</Layout>

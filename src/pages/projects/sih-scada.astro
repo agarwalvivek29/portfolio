@@ -1,0 +1,19 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+import ProjectPage from '../../components/ProjectPage.astro';
+---
+
+<Layout title="SIH 2024 SCADA — Vivek Agarwal">
+  <Navbar />
+  <ProjectPage
+    title="SIH 2024 SCADA"
+    tagline="SCADA system for Gas Authority of India Ltd — SIH 2024 Winner"
+    problem="GAIL needed a modern SCADA (Supervisory Control and Data Acquisition) system for monitoring and controlling industrial gas pipeline infrastructure."
+    solution="Built a comprehensive SCADA system that won Smart India Hackathon 2024, competing against 80,000+ teams nationwide. The system provides real-time monitoring and control capabilities for gas pipeline operations."
+    technical="Developed during Smart India Hackathon 2024. The system integrates sensor data acquisition, real-time visualization, and control mechanisms for industrial gas infrastructure monitoring."
+    tech={['Python', 'IoT', 'SCADA', 'Real-time Systems']}
+  />
+  <Footer />
+</Layout>

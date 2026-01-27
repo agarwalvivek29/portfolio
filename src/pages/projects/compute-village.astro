@@ -1,0 +1,20 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+import ProjectPage from '../../components/ProjectPage.astro';
+---
+
+<Layout title="Compute Village — Vivek Agarwal">
+  <Navbar />
+  <ProjectPage
+    title="Compute Village"
+    tagline="Distributed compute project"
+    problem="Distributing computational workloads across multiple nodes efficiently remains a fundamental challenge in building scalable systems."
+    solution="A distributed compute platform that orchestrates workload distribution across networked nodes."
+    technical="TypeScript-based distributed system implementing task scheduling, node coordination, and result aggregation across compute nodes."
+    tech={['TypeScript', 'Distributed Systems']}
+    github="https://github.com/agarwalvivek29/compute_village"
+  />
+  <Footer />
+</Layout>

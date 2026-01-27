@@ -1,0 +1,21 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+import ProjectPage from '../../components/ProjectPage.astro';
+---
+
+<Layout title="EcoTokens — Vivek Agarwal">
+  <Navbar />
+  <ProjectPage
+    title="EcoTokens"
+    tagline="Web3 carbon credit marketplace on Ethereum"
+    problem="Carbon credit markets are opaque, inaccessible to individuals, and lack transparency in tracking actual environmental impact."
+    solution="A decentralised marketplace where users can purchase, trade, and retire NFTs representing certified carbon offset projects. Smart contracts automate transactions, and an ML model predicts past carbon credits."
+    technical="Built on Ethereum with Solidity smart contracts for NFT minting and marketplace logic. React frontend with Web3.js and MetaMask integration for wallet connectivity. Node.js backend with MongoDB for off-chain data. ML-based prediction model calculates historical carbon credits."
+    tech={['React', 'Node.js', 'MongoDB', 'Solidity', 'Web3.js', 'MetaMask', 'Ethereum']}
+    github="https://github.com/agarwalvivek29/sheCodes"
+    deployment="https://she-codes-six.vercel.app"
+  />
+  <Footer />
+</Layout>

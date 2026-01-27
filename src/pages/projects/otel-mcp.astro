@@ -1,0 +1,20 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+import ProjectPage from '../../components/ProjectPage.astro';
+---
+
+<Layout title="OpenTelemetry MCP — Vivek Agarwal">
+  <Navbar />
+  <ProjectPage
+    title="OpenTelemetry MCP"
+    tagline="MCP server for observability tooling"
+    problem="AI agents lack standardized access to observability data, making it difficult to build AI-driven monitoring and debugging workflows."
+    solution="An MCP (Model Context Protocol) server that exposes OpenTelemetry observability data to AI agents, enabling them to query traces, metrics, and logs programmatically."
+    technical="Python-based MCP server implementation following the Model Context Protocol specification. Integrates with OpenTelemetry collectors and backends to surface observability data through a standardized agent-friendly interface."
+    tech={['Python', 'OpenTelemetry', 'MCP', 'Observability']}
+    github="https://github.com/agarwalvivek29/opentelemetry-mcp"
+  />
+  <Footer />
+</Layout>

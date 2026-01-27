@@ -1,0 +1,184 @@
+---
+const experiences = [
+  {
+    company: 'FinalRoundAI',
+    url: 'https://finalroundai.com',
+    period: 'Sept 2025 – Present',
+    roles: [
+      {
+        title: 'Infrastructure & AI Engineer',
+        bullets: [
+          'Architected distributed multi-agent system for Hellyeah AI using Agno orchestration and LangFuse for LLM observability',
+          'Built RAG pipelines for async evaluations powering AI-driven interview feedback',
+          'Created MCP-based integrations for agentic control on Google & Meta Ads',
+          'Managed GitOps (Argo CD) deployments with hybrid observability (Datadog + LGTM)',
+        ],
+      },
+    ],
+  },
+  {
+    company: 'Stealth Fintech Startup',
+    url: '',
+    period: '',
+    roles: [
+      {
+        title: 'Co-Founder',
+        bullets: [
+          'Architected end-to-end MFT platform for retail Indian markets',
+          'Built ultra-low-latency (<50ms) UDP market feed using Rust',
+          'Designed custom MCP server to power AI-driven trading clients with real-time market data',
+        ],
+      },
+    ],
+  },
+  {
+    company: 'Aspora (Vance)',
+    url: 'https://vance.tech',
+    period: 'Apr – Sept 2025',
+    roles: [
+      {
+        title: 'DevOps Engineer',
+        bullets: [
+          'Designed observability infrastructure for 25+ services (queues, databases, APM, logs)',
+          'Architected Airflow-orchestrated ETL workflows to Redshift',
+          'Implemented Debezium-based CDC system for real-time order processing',
+          'Zero-downtime service migrations with Terraform and Terragrunt',
+        ],
+      },
+    ],
+  },
+  {
+    company: 'Embeddings Corporation',
+    url: 'https://embeddings.co',
+    period: 'Mar – Apr 2025',
+    roles: [
+      {
+        title: 'Software Engineer',
+        bullets: [
+          'Built search-based evaluations using OpenSearch, embedding models, and vector databases for semantic retrieval',
+          'Worked on LLM and RAG architectures for document Q&A and knowledge retrieval systems',
+          'Designed evaluation pipelines to benchmark retrieval accuracy and relevance across different embedding strategies',
+        ],
+      },
+    ],
+  },
+  {
+    company: 'Soundverse AI',
+    url: 'https://soundverse.ai',
+    period: 'Mar 2024 – Mar 2025',
+    roles: [
+      {
+        title: 'Backend & DevOps Lead',
+        period: 'Dec 2024 – Mar 2025',
+        bullets: [
+          'Led complete Soundverse 2.0 rewrite — backend migration from Next.js + MongoDB to FastAPI + PostgreSQL, frontend from Next.js 13 to 14',
+          'Scaled platform to 385,000+ users with async processing, priority-based queuing, and 100% reliability',
+          'Architected GPU cluster for LLM model inference with parallelization across worker nodes',
+          'Managed team of 3 engineers with full technical ownership in absence of CTO',
+        ],
+      },
+      {
+        title: 'Backend Engineer',
+        period: 'Sept – Nov 2024',
+        bullets: [
+          'Built acknowledgment-based WebSocket delivery using Redis for reliable cross-platform real-time messaging',
+          'Redesigned system architecture with the CTO to enable reliable messaging at scale',
+          'Implemented end-to-end CI/CD with GitHub Actions and production monitoring with Grafana + Prometheus for Celery workers',
+          'Handled AI traffic via RabbitMQ for async processing',
+        ],
+      },
+      {
+        title: 'Full Stack Engineer',
+        period: 'Mar – Aug 2024',
+        bullets: [
+          'Built real-time collaboration for AI Studio enabling seamless teamwork in song creation',
+          'Developed data attribution platform using Qdrant to track AI model usage for licensed audio',
+          'Created SEO-optimized, indexed Song & Profile pages for discoverability',
+          'Redesigned the platform UI and collaborated with Shopflo on end-to-end marketing campaigns',
+        ],
+      },
+    ],
+  },
+  {
+    company: 'Sigma Cranes & Hoists',
+    url: 'https://sigmacranes.com',
+    period: 'Jun – Aug 2024',
+    roles: [
+      {
+        title: 'Full Stack Engineer (Freelance)',
+        bullets: [
+          'Built an interactive 3D spares purchasing platform for complex industrial crane and hoist machinery, enabling visual part identification and ordering',
+          'Developed an internal ERP system to digitize decades of legacy paper records and automate procurement, inventory, and workflow management',
+          'Integrated product catalogs with 3D model viewers so customers could explore machinery components before purchase',
+        ],
+      },
+    ],
+  },
+];
+---
+
+<section id="experience" class="py-20 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto fade-in">
+  <h2 class="text-2xl sm:text-3xl font-bold mb-10">Experience</h2>
+  <div class="relative">
+    <!-- Timeline line -->
+    <div class="absolute left-0 md:left-4 top-0 bottom-0 w-px bg-border"></div>
+
+    <div class="space-y-10">
+      {experiences.map((exp) => (
+        <div class="relative pl-8 md:pl-12">
+          <!-- Timeline dot -->
+          <div class="absolute left-0 md:left-4 top-1.5 w-2 h-2 rounded-full bg-accent -translate-x-1/2"></div>
+
+          <div>
+            <!-- Company header -->
+            <div class="flex flex-col sm:flex-row sm:items-baseline sm:gap-3 mb-1">
+              {exp.url ? (
+                <a href={exp.url} target="_blank" rel="noopener" class="text-lg font-semibold hover:text-accent transition-colors">{exp.company}</a>
+              ) : (
+                <h3 class="text-lg font-semibold">{exp.company}</h3>
+              )}
+              {exp.period && <span class="text-sm text-text-dim">{exp.period}</span>}
+            </div>
+
+            {/* Single role — render inline */}
+            {exp.roles.length === 1 && (
+              <div>
+                <p class="text-sm text-text-muted mb-3">{exp.roles[0].title}</p>
+                <ul class="space-y-1.5">
+                  {exp.roles[0].bullets.map((bullet) => (
+                    <li class="text-sm text-text-muted leading-relaxed pl-4 relative before:content-[''] before:absolute before:left-0 before:top-2 before:w-1.5 before:h-1.5 before:rounded-full before:bg-border">
+                      {bullet}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            {/* Multiple roles — nested sub-timeline */}
+            {exp.roles.length > 1 && (
+              <div class="mt-4 relative pl-5 border-l border-border/50 space-y-6">
+                {exp.roles.map((role) => (
+                  <div class="relative">
+                    <!-- Sub-timeline dot -->
+                    <div class="absolute -left-5 top-1 w-2 h-2 rounded-full bg-border-hover -translate-x-1/2"></div>
+                    <div class="flex flex-col sm:flex-row sm:items-baseline sm:gap-3 mb-1">
+                      <p class="text-sm font-medium text-text">{role.title}</p>
+                      {role.period && <span class="text-xs text-text-dim">{role.period}</span>}
+                    </div>
+                    <ul class="space-y-1.5 mt-2">
+                      {role.bullets.map((bullet) => (
+                        <li class="text-sm text-text-muted leading-relaxed pl-4 relative before:content-[''] before:absolute before:left-0 before:top-2 before:w-1.5 before:h-1.5 before:rounded-full before:bg-border">
+                          {bullet}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

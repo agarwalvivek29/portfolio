@@ -1,0 +1,21 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+import ProjectPage from '../../components/ProjectPage.astro';
+---
+
+<Layout title="Bounty Hub — Vivek Agarwal">
+  <Navbar />
+  <ProjectPage
+    title="Bounty Hub"
+    tagline="Base Network ETH + GitHub open-source bounty dispenser"
+    problem="Open-source maintainers lack a simple way to incentivize contributions with crypto bounties tied directly to GitHub issues."
+    solution="A platform that connects GitHub repositories with Base Network ETH bounties. Maintainers can attach bounties to issues, and contributors claim them upon merge."
+    technical="JavaScript-based application integrating GitHub API for issue tracking and contribution verification. Ethereum/Base Network smart contracts for bounty escrow and automated payouts."
+    tech={['JavaScript', 'Ethereum', 'Base Network', 'GitHub API']}
+    github="https://github.com/agarwalvivek29/bounty-hub"
+    deployment="https://bounty-hub.vercel.app"
+  />
+  <Footer />
+</Layout>
