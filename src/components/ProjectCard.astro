@@ -9,7 +9,7 @@ interface Props {
 const { title, description, tech, href } = Astro.props;
 ---
 
-<a href={href} class="block p-6 rounded-xl bg-bg-card border border-border hover:border-border-hover transition-all hover:-translate-y-0.5 group">
+<a href={href} target="_blank" rel="noopener" class="block p-6 rounded-xl bg-bg-card border border-border hover:border-border-hover transition-all hover:-translate-y-0.5 group">
   <h3 class="text-lg font-semibold mb-2 group-hover:text-accent transition-colors">{title}</h3>
   <p class="text-sm text-text-muted leading-relaxed mb-4">{description}</p>
   <div class="flex flex-wrap gap-2">
