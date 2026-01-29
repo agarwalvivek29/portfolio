@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import Analytics from '@vercel/analytics/astro';
 
 interface Props {
   title?: string;
@@ -23,6 +24,7 @@ const { title = 'Vivek Agarwal — Infrastructure & AI Engineer', description = 
   </head>
   <body class="min-h-screen antialiased">
     <slot />
+    <Analytics />
     <script>
       const observer = new IntersectionObserver(
         (entries) => {
