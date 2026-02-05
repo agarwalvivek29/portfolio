@@ -1,11 +1,11 @@
 ---
 const links = [
-  { label: 'About', href: '#about' },
   { label: 'Experience', href: '#experience' },
   { label: 'Projects', href: '#projects' },
   { label: 'Skills', href: '#skills' },
   { label: 'Achievements', href: '#achievements' },
   { label: 'Contact', href: '#contact' },
+  { label: 'Resume', href: '/resume.pdf', external: true },
 ];
 ---
 
@@ -17,7 +17,11 @@ const links = [
       <!-- Desktop nav -->
       <div class="hidden md:flex items-center gap-8">
         {links.map((link) => (
-          <a href={link.href} class="text-sm text-text-muted hover:text-text transition-colors">
+          <a
+            href={link.href}
+            class="text-sm text-text-muted hover:text-text transition-colors"
+            {...(link.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+          >
             {link.label}
           </a>
         ))}
@@ -39,7 +43,11 @@ const links = [
   <div id="mobile-menu" class="hidden md:hidden border-t border-border bg-bg/95 backdrop-blur-md">
     <div class="px-4 py-4 space-y-3">
       {links.map((link) => (
-        <a href={link.href} class="mobile-link block text-sm text-text-muted hover:text-text transition-colors py-1">
+        <a
+          href={link.href}
+          class="mobile-link block text-sm text-text-muted hover:text-text transition-colors py-1"
+          {...(link.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+        >
           {link.label}
         </a>
       ))}
