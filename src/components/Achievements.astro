@@ -4,49 +4,85 @@ import sih2024 from '../assets/achievements/sih-2024.jpg';
 import innerve from '../assets/achievements/innerve.jpg';
 import hackKarnataka from '../assets/achievements/hackathon-wins.jpg';
 import shecodes from '../assets/achievements/shecodes.jpg';
-// import hackRefine from '../assets/achievements/hack-refine.jpg';
+import hackRefine from '../assets/achievements/hack-refine.jpg';
 
+// Chronological order (most recent first), Rashtrapati Bhavan always on top
 const technicalAchievements = [
-  // Always keep on top
   {
     title: 'Rashtrapati Bhavan Invitation - Independence Day 2025',
     description: 'Invited by the President of India on the 76th Independence Day. Recognized for outstanding contribution at a national level.',
     image: rashtrapatiBhavan,
   },
   {
-    title: 'SheCodes 2024 — Blockchain Track',
-    description: 'Built a decentralised carbon credits marketplace. Won 1st place in the blockchain track among 70 teams.',
-    image: shecodes,
+    title: 'Hack Karnataka — 1st Place',
+    description: 'Won Hack Karnataka at KLE Institute of Technology. Organized by GDG Hubli. Nov 2025.',
+    image: hackKarnataka,
   },
   {
-    title: 'SIH 2024 Winners',
-    description: 'Won Smart India Hackathon 2024, building a SCADA system for GAIL. Competed against 80,000+ teams nationwide.',
-    image: sih2024,
-  },
-  {
-    title: 'Innerve 9.0 Winners',
-    description: '1st place at Innerve 9.0, Army Institute of Technology. Outperformed 1,250+ teams.',
+    title: 'Innerve 9.0 — 1st Place',
+    description: '1st place at Innerve 9.0, Army Institute of Technology, Pune. Outperformed 1,250+ teams. Feb 2025.',
     image: innerve,
   },
   {
-    title: 'Hack Karnataka Winners',
-    description: 'Won Hack Karnataka at KLE Technological University with team Luminosity. Organized by Google Developer Group Hubli.',
-    image: hackKarnataka,
+    title: 'Smart India Hackathon 2024 — Winner',
+    description: 'Won SIH 2024 (PS 1708), building a SCADA system for GAIL. Competed against 80,000+ teams nationwide. Dec 2024.',
+    image: sih2024,
   },
-  // {
-  //   title: 'Hack Refine Winners',
-  //   description: 'TODO: Add description.',
-  //   image: hackRefine,
-  // },
+  {
+    title: 'SheCodes 2024 — Blockchain Track Winner',
+    description: 'Built a decentralised carbon credits marketplace. Won 1st place in the blockchain track at Reva University X WTM. Jun 2024.',
+    image: shecodes,
+  },
+  {
+    title: 'Hack Refine — 1st Place',
+    description: 'Won 1st position at Hack Refine organized by IEEE Robotics and Automation Society, DSCE. Dec 2023.',
+    image: hackRefine,
+  },
 ];
 
-// const literaryAchievements = [
-//   {
-//     title: 'TODO',
-//     description: 'TODO',
-//     image: null,
-//   },
-// ];
+// Chronological order (most recent first)
+const literaryAchievements = [
+  { place: '1st', event: 'Capital Conclave', eventName: 'Margazhi 2024', organizer: 'IIT Madras', date: 'Jan 2024' },
+  { place: '1st', event: 'Words Wage War (Just a Min)', eventName: 'Amatora 2024', organizer: 'MCC', date: 'Jan 2024' },
+  { place: '1st', event: 'Extempore', eventName: 'Amatora 2024', organizer: 'MCC', date: 'Jan 2024' },
+  { place: '2nd', event: 'British Parliamentary Debate', eventName: null, organizer: 'PES University', date: 'Nov 2023' },
+  { place: '1st', event: 'Debate', eventName: null, organizer: 'CSE Dept, DSCE', date: 'Aug 2023' },
+  { place: '1st', event: 'Elocution & Extempore', eventName: 'Synapse', organizer: 'IIT Madras', date: 'Jul 2023' },
+  { place: '2nd', event: 'Turncoat', eventName: 'Sambhram 2023', organizer: 'RVITM', date: 'Jun 2023' },
+  { place: '2nd', event: 'Turncoat', eventName: 'AatmaTrisha 2023', organizer: 'PES University', date: 'Apr 2023' },
+  { place: '2nd', event: 'Debate', eventName: 'Inbloom 2023', organizer: 'Christ University', date: 'Apr 2023' },
+];
+
+// MUN Experiences (chronological order, most recent first)
+const munAchievements = [
+  {
+    place: 'Honourable Mention',
+    role: 'Pragya Singh Thakur',
+    agenda: 'Bharatiya Nyay Sanhita Bill',
+    committee: 'Lok Sabha',
+    eventName: "People's Conference 2023",
+    organizer: 'PES University',
+    date: '7-8 Oct 2023',
+  },
+  {
+    place: '3rd Place',
+    role: 'Delegate of Saudi Arabia',
+    agenda: 'Multilateralism and Global Governance',
+    committee: 'G20 Summit',
+    eventName: '8th Mile Fest',
+    organizer: 'RV University',
+    date: '15-17 Jun 2023',
+  },
+  {
+    place: 'Special Mention',
+    role: 'Himanta Biswa Sarma',
+    agenda: 'Deliberating upon the need for reorganization of state boundaries',
+    committee: 'All India Political Parties Meet',
+    eventName: 'DSI MUN 2.0',
+    organizer: 'DSCE',
+    date: '27-28 Feb 2023',
+  },
+];
 ---
 
 <section id="achievements" class="py-20 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto fade-in">
@@ -56,39 +92,65 @@ const technicalAchievements = [
   <h3 class="text-lg font-semibold text-text-muted mb-6">Technical</h3>
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
     {technicalAchievements.map((item) => (
-      <div class="rounded-xl bg-bg-card border border-border overflow-hidden hover:border-border-hover transition-colors">
-        {item.image ? (
+      item.image ? (
+        <div class="rounded-xl bg-bg-card border border-border overflow-hidden hover:border-border-hover transition-colors">
           <img src={item.image.src} alt={item.title} class="w-full h-40 object-cover" loading="lazy" />
-        ) : (
-          <div class="w-full h-40 bg-bg-card-hover flex items-center justify-center text-text-dim text-sm">
-            Photo placeholder
+          <div class="p-4">
+            <h4 class="font-semibold text-sm mb-1">{item.title}</h4>
+            <p class="text-xs text-text-muted leading-relaxed">{item.description}</p>
           </div>
-        )}
-        <div class="p-4">
-          <h4 class="font-semibold text-sm mb-1">{item.title}</h4>
+        </div>
+      ) : (
+        <div class="rounded-xl bg-bg-card border border-border overflow-hidden hover:border-border-hover transition-colors px-5 py-6">
+          <h4 class="font-semibold text-sm mb-2">{item.title}</h4>
           <p class="text-xs text-text-muted leading-relaxed">{item.description}</p>
+        </div>
+      )
+    ))}
+  </div>
+
+  <h3 class="text-lg font-semibold text-text-muted mb-6 mt-12">Literary & Public Speaking</h3>
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+    {literaryAchievements.map((item) => (
+      <div class="flex items-center gap-3 px-4 py-3 rounded-lg bg-bg-card border border-border hover:border-border-hover transition-colors">
+        <span class="text-xs font-semibold text-accent bg-accent/10 px-2 py-1 rounded whitespace-nowrap">{item.place}</span>
+        <div class="flex flex-col min-w-0">
+          <span class="font-medium text-sm truncate">{item.event}{item.eventName && ` — ${item.eventName}`}</span>
+          <span class="text-xs text-text-muted truncate">{item.organizer} • {item.date}</span>
         </div>
       </div>
     ))}
   </div>
 
-  {/* Literary — uncomment when ready */}
-  {/* <h3 class="text-lg font-semibold text-text-muted mb-6 mt-12">Literary</h3>
+  <h3 class="text-lg font-semibold text-text-muted mb-6 mt-12">Model United Nations</h3>
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-    {literaryAchievements.map((item) => (
-      <div class="rounded-xl bg-bg-card border border-border overflow-hidden hover:border-border-hover transition-colors">
-        {item.image ? (
-          <img src={item.image.src} alt={item.title} class="w-full h-40 object-cover" loading="lazy" />
-        ) : (
-          <div class="w-full h-40 bg-bg-card-hover flex items-center justify-center text-text-dim text-sm">
-            Photo placeholder
+    {munAchievements.map((item) => (
+      <div class="rounded-xl bg-bg-card border border-border overflow-hidden hover:border-border-hover transition-colors p-5">
+        <div class="flex items-center justify-between mb-4">
+          <span class="text-xs font-semibold text-accent bg-accent/10 px-2.5 py-1 rounded">{item.place}</span>
+          <span class="text-xs text-text-muted">{item.date}</span>
+        </div>
+        <div class="space-y-3">
+          <div>
+            <p class="text-[10px] uppercase tracking-wider text-text-dim mb-0.5">Role</p>
+            <p class="text-sm font-medium">{item.role}</p>
           </div>
-        )}
-        <div class="p-4">
-          <h4 class="font-semibold text-sm mb-1">{item.title}</h4>
-          <p class="text-xs text-text-muted leading-relaxed">{item.description}</p>
+          {item.agenda && (
+            <div>
+              <p class="text-[10px] uppercase tracking-wider text-text-dim mb-0.5">Agenda</p>
+              <p class="text-sm font-medium">{item.agenda}</p>
+            </div>
+          )}
+          <div>
+            <p class="text-[10px] uppercase tracking-wider text-text-dim mb-0.5">Committee</p>
+            <p class="text-sm font-medium">{item.committee}</p>
+          </div>
+          <div class="pt-2 border-t border-border">
+            <p class="text-sm font-medium">{item.eventName}</p>
+            <p class="text-xs text-text-muted">{item.organizer}</p>
+          </div>
         </div>
       </div>
     ))}
-  </div> */}
+  </div>
 </section>
