@@ -1,0 +1,21 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+import ProjectPage from '../../components/ProjectPage.astro';
+---
+
+<Layout title="SkillBridge — Vivek Agarwal">
+  <Navbar />
+  <ProjectPage
+    title="SkillBridge"
+    tagline="AI-powered freelance platform with Solana escrow"
+    problem="Freelance platforms charge high fees, rely on centralized trust for payments, and lack objective quality verification — leaving both clients and freelancers exposed to disputes and unfair outcomes."
+    solution="A decentralized freelance marketplace that locks funds in Solana smart contract escrow and uses Claude AI to objectively verify deliverable quality against acceptance criteria. Multi-milestone gigs, wallet-based auth, and role-specific dashboards for clients and freelancers."
+    technical="Monorepo architecture with Next.js 14 frontend using Solana Wallet Adapter for Phantom/Solflare authentication via Ed25519 signatures. FastAPI backend with async SQLAlchemy and Alembic migrations on PostgreSQL. Anchor smart contracts in Rust deployed to Solana Devnet for SOL/USDC escrow. Redis + Celery for async task processing. Protocol Buffers as single source of truth for schema with Go/Python/TS codegen. AWS S3 presigned uploads for file storage. 308+ API tests."
+    tech={['Next.js', 'TypeScript', 'FastAPI', 'Python', 'Rust', 'Solana', 'Anchor', 'PostgreSQL', 'Redis', 'Claude API', 'Protobuf', 'AWS S3']}
+    github="https://github.com/agarwalvivek29/skillbridge"
+    deployment="https://skillbridge.agarwalvivek.com"
+  />
+  <Footer />
+</Layout>
