@@ -1,0 +1,21 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+import ProjectPage from '../../components/ProjectPage.astro';
+---
+
+<Layout title="VibeFlow — Vivek Agarwal">
+  <Navbar />
+  <ProjectPage
+    title="VibeFlow"
+    tagline="Don't type, just speak — offline voice-to-text for macOS"
+    problem="Cloud-based dictation tools transmit voice data to external servers, raising privacy concerns. They require internet, charge subscriptions, and often produce raw transcriptions full of filler words and grammar issues."
+    solution="A fully offline macOS app that converts speech into polished, written text in any application. Hold a hotkey, speak naturally, and VibeFlow transcribes, cleans, and pastes the result automatically. Supports multiple writing styles (Casual, Professional, Creative, Technical) and custom dictionaries for technical terminology."
+    technical="Native macOS app built with SwiftUI and SwiftData. Dual speech engine architecture with Apple Speech Recognition for low-latency transcription and WhisperKit for offline Whisper-quality accuracy. On-device AI text cleanup via Qwen 0.5B running on MLX Swift — removes filler words, fixes grammar, and adjusts tone without any network calls. Protocol-based engine system for extensibility. AVFoundation and CoreAudio for audio capture. Runs on macOS 14+ Apple Silicon with ~450 MB disk and ~650 MB RAM footprint."
+    tech={['Swift', 'SwiftUI', 'SwiftData', 'AVFoundation', 'CoreAudio', 'WhisperKit', 'MLX Swift', 'Speech.framework', 'AppKit']}
+    github="https://github.com/agarwalvivek29/VibeFlow"
+    deployment="https://vibeflow.agarwalvivek.com"
+  />
+  <Footer />
+</Layout>
