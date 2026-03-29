@@ -9,13 +9,13 @@ import ProjectPage from '../../components/ProjectPage.astro';
   <Navbar />
   <ProjectPage
     title="Bounty Hub"
-    tagline="Base Network ETH + GitHub open-source bounty dispenser"
-    problem="Open-source maintainers lack a simple way to incentivize contributions with crypto bounties tied directly to GitHub issues."
-    solution="A platform that connects GitHub repositories with Base Network ETH bounties. Maintainers can attach bounties to issues, and contributors claim them upon merge."
-    technical="JavaScript-based application integrating GitHub API for issue tracking and contribution verification. Ethereum/Base Network smart contracts for bounty escrow and automated payouts."
-    tech={['JavaScript', 'Ethereum', 'Base Network', 'GitHub API']}
+    tagline="Incentivize open-source contributions with on-chain ETH bounties on Base"
+    problem="Open-source maintainers have no simple way to fund and reward contributions — existing tools require external sign-ups, off-chain payments, and manual overhead."
+    solution="BountyHub brings bounties directly into GitHub via a bot. Comment /bounty 0.5ETH on any issue to lock funds in a smart contract escrow. Comment /reward @username when done — the contributor gets paid on-chain instantly and the issue closes automatically."
+    technical="GitHub App bot listens to issue comments and triggers on-chain transactions on Base (Ethereum L2). Smart contracts handle escrow, locking funds on bounty creation and releasing them on reward. Maintainers deposit once and create multiple bounties from their balance. Every transaction is on-chain and transparent."
+    tech={['TypeScript', 'Solidity', 'Base', 'GitHub API', 'Next.js']}
     github="https://github.com/agarwalvivek29/bounty-hub"
-    deployment="https://bounty-hub.vercel.app"
+    deployment="https://bounty-hub.agarwalvivek.com"
   />
   <Footer />
 </Layout>
